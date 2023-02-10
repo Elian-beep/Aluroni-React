@@ -2,6 +2,7 @@ import styles from "./Carte.module.scss";
 import { ReactComponent as Logo } from "assets/logo.svg";
 import Search from "./Search";
 import { useState } from "react";
+import Filters from "./Filters";
 
 export default function Carte(){
 
@@ -22,6 +23,9 @@ export default function Carte(){
             <section className={styles.cardapio}>
                 <h3 className={styles.cardapio__titulo}>Cardápio</h3>
                 <Search busca={busca} setBusca={setBusca} />
+                <div className={styles.cardapio__filtros}>
+                    <Filters />
+                </div>
             </section>
         </main>
     );
