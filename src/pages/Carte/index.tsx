@@ -3,10 +3,13 @@ import { ReactComponent as Logo } from "assets/logo.svg";
 import Search from "./Search";
 import { useState } from "react";
 import Filters from "./Filters";
+import Order from "./Order";
 
 export default function Carte(){
 
     const [busca, setBusca] = useState("");
+    const [filtro, setFiltro] = useState<number | null>(null);
+    const [ordenador, setOrdenador] = useState("");
 
     return(
         <main>
@@ -24,7 +27,8 @@ export default function Carte(){
                 <h3 className={styles.cardapio__titulo}>Cardápio</h3>
                 <Search busca={busca} setBusca={setBusca} />
                 <div className={styles.cardapio__filtros}>
-                    <Filters />
+                    <Filters filtro={filtro} setFiltro={setFiltro} />
+                    <Order ordenador={ordenador} setOrdenador={setOrdenador} />
                 </div>
             </section>
         </main>
