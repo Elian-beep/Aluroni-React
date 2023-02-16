@@ -4,6 +4,7 @@ import Search from "./Search";
 import { useState } from "react";
 import Filters from "./Filters";
 import Order from "./Order";
+import Items from "./Items";
 
 export default function Carte(){
 
@@ -30,6 +31,7 @@ export default function Carte(){
                     <Filters filtro={filtro} setFiltro={setFiltro} />
                     <Order ordenador={ordenador} setOrdenador={setOrdenador} />
                 </div>
+                <Items />
             </section>
         </main>
     );
