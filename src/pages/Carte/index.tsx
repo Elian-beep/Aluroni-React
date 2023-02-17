@@ -31,7 +31,7 @@ export default function Carte(){
                     <Filters filtro={filtro} setFiltro={setFiltro} />
                     <Order ordenador={ordenador} setOrdenador={setOrdenador} />
                 </div>
-                <Items />
+                <Items busca={busca} filtro={filtro} ordenador={ordenador} />
             </section>
         </main>
     );
