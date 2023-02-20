@@ -1,5 +1,5 @@
 import styles from './Items.module.scss';
-import carte from './items.json';
+import carte from '../../../data/carte.json';
 import Item from './Item';
 import { useEffect, useState } from 'react';
 

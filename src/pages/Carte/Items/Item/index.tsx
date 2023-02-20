@@ -1,5 +1,5 @@
 import styles from './Item.module.scss';
-import carte from '../items.json';
+import carte from '../../../../data/carte.json';
 import classnames from 'classnames';
 
 type Props = typeof carte[0];
