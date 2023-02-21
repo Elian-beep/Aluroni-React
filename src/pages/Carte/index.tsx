@@ -1,5 +1,4 @@
 import styles from './Carte.module.scss';
-import { ReactComponent as Logo } from 'assets/logo.svg';
 import Search from './Search';
 import { useState } from 'react';
 import Filters from './Filters';
@@ -14,10 +13,6 @@ export default function Carte(){
 
   return(
     <main>
-      <nav className={styles.menu}>
-        <Logo />
-                Aluroni
-      </nav>
       <header className={styles.header}>
         <div className={styles.header__text}>
                     A casa do código e da amassa
