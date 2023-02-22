@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Filters from './Filters';
 import Order from './Order';
 import Items from './Items';
+import stylesTema from 'styles/Theme.module.scss';
 
 export default function Carte() {
 
@@ -13,7 +14,7 @@ export default function Carte() {
 
   return (
     <section className={styles.cardapio}>
-      <h3 className={styles.cardapio__titulo}>Cardápio</h3>
+      <h3 className={stylesTema.titulo}>Cardápio</h3>
       <Search busca={busca} setBusca={setBusca} />
       <div className={styles.cardapio__filtros}>
         <Filters filtro={filtro} setFiltro={setFiltro} />

@@ -1,5 +1,6 @@
 import styles from './PageDefault.module.scss';
 import { Outlet } from 'react-router-dom';
+import stylesTema from 'styles/Theme.module.scss';
 
 export default function PageDefault() {
   return (
@@ -9,7 +10,7 @@ export default function PageDefault() {
           A casa do código e da amassa
         </div>
       </header>
-      <div>
+      <div className={stylesTema.container}>
         <Outlet />
       </div>
     </>
