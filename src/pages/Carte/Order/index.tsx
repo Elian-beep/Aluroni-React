@@ -22,7 +22,7 @@ export default function Order({ ordenador, setOrdenador }: Props) {
       })}
       onClick={() => setAberto(!aberto)}
       onBlur={() => setAberto(false)}>
-      <span>{nomeOrdenador || 'Ordenadr por'}</span>
+      <span>{nomeOrdenador || 'Ordenar por'}</span>
       {aberto ? <MdKeyboardArrowUp size={20} /> : <MdKeyboardArrowDown size={20} />}
       <div className={classNames({
         [styles.ordenador__options]: true,

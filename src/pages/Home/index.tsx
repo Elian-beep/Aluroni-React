@@ -2,10 +2,16 @@ import carte from 'data/carte.json';
 import style from './Home.module.scss';
 import stylesTema from 'styles/Theme.module.scss';
 import nossaCasa from 'assets/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   let pratosRecomendados = [...carte];
   pratosRecomendados = pratosRecomendados.sort(() => .5 - Math.random()).splice(0, 3);
+  const navigate = useNavigate();
+
+  function redirecionarParadetalhes(prato: typeof carte[0]){
+    navigate(`/dish/${prato.id}`, { state: {...prato} });
+  }
   return (
     <section>
       <h3 className={stylesTema.titulo}>
@@ -17,7 +23,7 @@ export default function Home() {
             <div className={style.recomendado__imagem}>
               <img src={item.photo} alt={item.title} />
             </div>
-            <button className={style.recomendado__botao}>Ver mais</button>
+            <button onClick={() => redirecionarParadetalhes(item)} className={style.recomendado__botao}>Ver mais</button>
           </div>
         ))}
       </div>
