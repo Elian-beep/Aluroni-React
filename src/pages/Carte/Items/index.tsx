@@ -2,6 +2,7 @@ import styles from './Items.module.scss';
 import carte from '../../../data/carte.json';
 import Item from './Item';
 import { useEffect, useState } from 'react';
+import { Carte } from 'types/Prato';
 
 interface Props{
     busca: string,
@@ -23,7 +24,7 @@ export default function Items(props: Props){
     return true;
   }
 
-  function ordenar(novaLista: typeof carte){
+  function ordenar(novaLista: Carte){
     switch(ordenador){
     case 'porcao':
       return novaLista.sort((a, b) => a.size > b.size ? 1 : -1);

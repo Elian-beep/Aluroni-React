@@ -3,14 +3,15 @@ import style from './Home.module.scss';
 import stylesTema from 'styles/Theme.module.scss';
 import nossaCasa from 'assets/nossa_casa.png';
 import { useNavigate } from 'react-router-dom';
+import { Dish } from 'types/Prato';
 
 export default function Home() {
   let pratosRecomendados = [...carte];
   pratosRecomendados = pratosRecomendados.sort(() => .5 - Math.random()).splice(0, 3);
   const navigate = useNavigate();
 
-  function redirecionarParadetalhes(prato: typeof carte[0]){
-    navigate(`/dish/${prato.id}`, { state: {...prato} });
+  function redirecionarParadetalhes(prato: Dish){
+    navigate(`/dish/${prato.id}`, { state: { prato } });
   }
   return (
     <section>
