@@ -1,14 +1,16 @@
 import styles from './Dish.module.scss';
 import { useParams, useNavigate } from 'react-router-dom';
+
 import carte from 'data/carte.json';
 import TagsPrato from 'components/TagsPrato';
+import NotFound from 'pages/NotFound';
 
 export default function Dish() {
   const { id } = useParams();
   const navigate = useNavigate();
   const prato = carte.find(item => item.id === Number(id));
   if (!prato) {
-    return '';
+    return <NotFound />;
   }
   return (
     <>
