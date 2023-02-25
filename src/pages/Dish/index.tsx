@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import carte from 'data/carte.json';
 import TagsPrato from 'components/TagsPrato';
 import NotFound from 'pages/NotFound';
+import PageDefault from 'components/PageDefault';
 
 export default function Dish() {
   const { id } = useParams();
@@ -13,7 +14,7 @@ export default function Dish() {
     return <NotFound />;
   }
   return (
-    <>
+    <PageDefault>
       <button onClick={() => navigate(-1)} className={styles.voltar}> {'< Voltar'} </button>
       <section className={styles.container}>
         <h1 className={styles.titulo}>{prato.title}</h1>
@@ -25,6 +26,6 @@ export default function Dish() {
         </div>
         <TagsPrato {...prato} />
       </section>
-    </>
+    </PageDefault>
   );
 }
